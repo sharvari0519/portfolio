@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sharvari Sonawane | Data Analyst & AI Portfolio</title>
+    <meta name="description" content="Professional portfolio of Sharvari Sonawane, a Data Analyst with expertise in Python, SQL, Power BI, Excel, Data Modeling, and Machine Learning. Discover projects, experience, and certifications.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="index.css">
+</head>
+<body class="dark-theme">
+    <!-- Background Decorators -->
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+    <div class="glow-orb orb-3"></div>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span class="logo-icon">&lt;/&gt;</span>
+                <span class="logo-text">Sharvari <span class="accent-text">Sonawane</span></span>
+            </a>
+            
+            <nav class="nav-menu" id="nav-menu">
+                <a href="#hero" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#education" class="nav-link">Education</a>
+                <a href="#certificates" class="nav-link">Certificates</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-btn" aria-label="Toggle Light/Dark Theme">
+                    <!-- Sun Icon (shown in dark theme) -->
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="4"></circle>
+                        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+                    </svg>
+                    <!-- Moon Icon (shown in light theme) -->
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+                    </svg>
+                </button>
+                <button class="mobile-nav-toggle" id="mobile-menu-btn" aria-label="Toggle Mobile Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <div class="badge-container">
+                        <span class="hero-badge">✨ Available for Data Analyst Roles</span>
+                    </div>
+                    <h1 class="hero-title">Sharvari Sonawane</h1>
+                    <h2 class="hero-subtitle">Data Analyst & <span class="gradient-text">BI Specialist</span></h2>
+                    <p class="hero-description">
+                        Transforming complex datasets into clear, actionable business insights. Specializing in SQL database operations, Python (Pandas) data wrangling, interactive Power BI dashboards, and AI-driven analytical platforms.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn btn-primary">
+                            <span>View Projects</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </a>
+                        <button id="play-reel-btn" class="btn btn-reel">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                            <span>Play Reel</span>
+                        </button>
+                        <a href="https://linkedin.com/in/sharvarisonawane-396593b" target="_blank" rel="noopener noreferrer" class="btn btn-linkedin">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                            <span>LinkedIn Profile</span>
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                        <button onclick="window.print()" class="btn btn-tertiary">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                            <span>Resume</span>
+                        </button>
+                    </div>
+                    <!-- Hero Stats Dashboard -->
+                    <div class="hero-stats">
+                        <div class="stat-card">
+                            <span class="stat-number" data-target="1">0</span><span class="stat-suffix"> Yr</span>
+                            <span class="stat-label">Industry Experience</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number" data-target="284">0</span><span class="stat-suffix">k+</span>
+                            <span class="stat-label">Transactions Analyzed</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number" data-target="9.11">0</span><span class="stat-suffix"></span>
+                            <span class="stat-label">BBA CGPA</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number" data-target="4">0</span><span class="stat-suffix"></span>
+                            <span class="stat-label">Core AI & Data Projects</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="avatar-wrapper">
+                        <div class="avatar-ring"></div>
+                        <div class="avatar-frame">
+                            <img src="assets/sharvari.png" alt="Sharvari Sonawane" class="avatar-img">
+                        </div>
+                        <div class="floating-tag tag-1">
+                            <span class="tag-icon">📊</span>
+                            <span>Power BI & DAX</span>
+                        </div>
+                        <div class="floating-tag tag-2">
+                            <span class="tag-icon">🐍</span>
+                            <span>Python & SQL</span>
+                        </div>
+                        <div class="floating-tag tag-3">
+                            <span class="tag-icon">🤖</span>
+                            <span>TensorFlow & AI</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Professional Summary</h2>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="about-grid">
+                    <div class="about-card">
+                        <p class="lead-text">
+                            I am a driven BCA (Computer Application) graduate with a strong analytical mindset and expertise in data analysis, SQL databases, Python (Pandas), and Power BI dashboard development.
+                        </p>
+                        <p class="body-text">
+                            Proficient in exploratory data analysis (EDA), data cleaning, DAX measures, and interactive reporting. I specialize in translating large, complex datasets into clear, actionable business insights that drive strategic decision-making. Beyond core analytics, I build end-to-end data applications incorporating Computer Vision (OpenCV) and Machine Learning (TensorFlow.js).
+                        </p>
+                    </div>
+                    <div class="about-info-grid">
+                        <div class="info-item">
+                            <span class="info-label">Email</span>
+                            <a href="mailto:sharvarisonawane516@gmail.com" class="info-value">sharvarisonawane516@gmail.com</a>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Phone</span>
+                            <a href="tel:+919022369618" class="info-value">+91 9022369618</a>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Location</span>
+                            <span class="info-value">Pune, Maharashtra, India</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Degree</span>
+                            <span class="info-value">BBA (CA) - CGPA 9.11 / 10</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">LinkedIn</span>
+                            <a href="https://linkedin.com/in/sharvarisonawane-396593b" target="_blank" rel="noopener noreferrer" class="info-value">sharvarisonawane-396593b</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills-section section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Technical Expertise</h2>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="skills-grid">
+                    <!-- Programming -->
+                    <div class="skill-category-card">
+                        <div class="category-header">
+                            <div class="category-icon bg-indigo">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                            </div>
+                            <h3>Programming & ML</h3>
+                        </div>
+                        <ul class="skills-list">
+                            <li class="skill-item">
+                                <div class="skill-info">
+                                    <span>Core Python & Pandas</span>
+                                    <span>92%</span>
+                                </div>
+                                <div class="progress-bar-track">
+                                    <div class="progress-bar-fill indigo-fill" style="width: 92%"></div>
+                                </div>
+                            </li>
+                            <li class="skill-item">
+                                <div class="skill-info">
+                                    <span>Core Java & Web (JS/HTML/CSS)</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="progress-bar-track">
+                                    <div class="progress-bar-fill indigo-fill" style="width: 85%"></div>
+                                </div>
+                            </li>
+                            <li class="skill-item">
+                                <div class="skill-info">
+                                    <span>OpenCV & TensorFlow.js</span>
+                                    <span>80%</span>
+                                </div>
+                                <div class="progress-bar-track">
+                                    <div class="progress-bar-fill indigo-fill" style="width: 80%"></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Database -->
+                    <div class="skill-category-card">
+                        <div class="category-header">
+                            <div class="category-icon bg-emerald">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M3 5V19A9 3 0 0 0 21 19V5"></path><path d="M3 12A9 3 0 0 0 21 12"></path></svg>
+                            </div>
+                            <h3>Database & SQL</h3>
+                        </div>
+                        <ul class="skills-list">
+                            <li class="skill-item">
+                                <div class="skill-info">
+                                    <span>SQL & MySQL Operations</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="progress-bar-track">
+                                    <div class="progress-bar-fill emerald-fill" style="width: 90%"></div>
+                                </div>
+                            </li>
+                            <li class="skill-item">
+                                <div class="skill-info">
+                                    <span>Relational Schema Design & CTEs</span>
+                                    <span>88%</span>
+                                </div>
+                                <div class="progress-bar-track">
+                                    <div class="progress-bar-fill emerald-fill" style="width: 88%"></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Visualization -->
+                    <div class="skill-category-card">
+                        <div class="category-header">
+                            <div class="category-icon bg-amber">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"></path><path d="m19 9-5 5-4-4-3 3"></path></svg>
+                            </div>
+                            <h3>Visualization & Business Tools</h3>
+                        </div>
+                        <ul class="skills-list">
+                            <li class="skill-item">
+                                <div class="skill-info">
+                                    <span>Power BI (Dashboards, DAX)</span>
+                                    <span>94%</span>
+                                </div>
+                                <div class="progress-bar-track">
+                                    <div class="progress-bar-fill amber-fill" style="width: 94%"></div>
+                                </div>
+                            </li>
+                            <li class="skill-item">
+                                <div class="skill-info">
+                                    <span>MS Excel (Pivot, VLOOKUP, Power Query)</span>
+                                    <span>95%</span>
+                                </div>
+                                <div class="progress-bar-track">
+                                    <div class="progress-bar-fill amber-fill" style="width: 95%"></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Concepts & Methodologies -->
+                    <div class="skill-category-card">
+                        <div class="category-header">
+                            <div class="category-icon bg-cyan">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path><line x1="4" y1="22" x2="4" y2="15"></line></svg>
+                            </div>
+                            <h3>Analytics Concepts</h3>
+                        </div>
+                        <ul class="skills-list">
+                            <li class="skill-item">
+                                <div class="skill-info">
+                                    <span>Data Cleaning & EDA</span>
+                                    <span>95%</span>
+                                </div>
+                                <div class="progress-bar-track">
+                                    <div class="progress-bar-fill cyan-fill" style="width: 95%"></div>
+                                </div>
+                            </li>
+                            <li class="skill-item">
+                                <div class="skill-info">
+                                    <span>KPI Development & Data Modeling</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="progress-bar-track">
+                                    <div class="progress-bar-fill cyan-fill" style="width: 90%"></div>
+                                </div>
+                            </li>
+                            <li class="skill-item">
+                                <div class="skill-info">
+                                    <span>ETL Pipeline Basics</span>
+                                    <span>86%</span>
+                                </div>
+                                <div class="progress-bar-track">
+                                    <div class="progress-bar-fill cyan-fill" style="width: 86%"></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="experience-section section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Work Experience</h2>
+                    <div class="section-divider"></div>
+                </div>
+                
+                <div class="timeline">
+                    <!-- Experience Item 1 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2023 - 2024</div>
+                        <div class="timeline-content">
+                            <div class="job-header">
+                                <h3 class="job-title">Support Analyst</h3>
+                                <span class="job-company">ISERU, Pune</span>
+                            </div>
+                            <ul class="job-details">
+                                <li>Extracted, cleaned, and validated large datasets using MS Excel to ensure accuracy, consistency, and data integrity across reporting cycles.</li>
+                                <li>Built Excel-based reports and dashboards to track key performance metrics, enabling data-driven decision-making across teams.</li>
+                                <li>Maintained documentation for recurring data processes, reducing turnaround time and improving analytical efficiency.</li>
+                                <li>Collaborated with stakeholders to identify data discrepancies and deliver timely analytical support.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Featured Projects</h2>
+                    <div class="section-divider"></div>
+                </div>
+
+                <!-- Tabs Navigation -->
+                <div class="project-tabs">
+                    <button class="tab-btn active" data-tab="fraud-project">Credit Card Fraud Detection</button>
+                    <button class="tab-btn" data-tab="ecommerce-project">E-commerce Sustainability</button>
+                    <button class="tab-btn" data-tab="facerec-project">Face Recognition Attendance</button>
+                    <button class="tab-btn" data-tab="neuraltrade-project">Neural Trade AI</button>
+                </div>
+
+                <!-- Tabs Content -->
+                <div class="project-display-card">
+                    <!-- Project 1: Credit Card Fraud Detection -->
+                    <div class="project-content-pane active" id="fraud-project">
+                        <div class="project-grid">
+                            <div class="project-details-side">
+                                <div class="project-badge bg-indigo-text">Power BI, MySQL & DAX</div>
+                                <h3 class="project-name">Credit Card Fraud Detection Dashboard</h3>
+                                <p class="project-description">
+                                    Developed an interactive analytics dashboard evaluating 284,807 credit card transaction records to identify patterns, anomaly indicators, and fraud risk metrics.
+                                </p>
+                                <ul class="project-bullets">
+                                    <li>Built dynamic KPI cards, interactive slicers, donut charts, and line graphs for transaction analysis.</li>
+                                    <li>Utilized MySQL queries and DAX measures to calculate fraud ratios and flag high-risk transaction spikes.</li>
+                                    <li>Created structured data drill-throughs providing actionable risk mitigation insights.</li>
+                                </ul>
+                                <div class="tech-stack">
+                                    <span class="tech-tag">Power BI</span>
+                                    <span class="tech-tag">MySQL</span>
+                                    <span class="tech-tag">DAX</span>
+                                    <span class="tech-tag">Fraud Analytics</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/sharvari0519/Credit-Card-Fraud-Detection-Dashboard" target="_blank" rel="noopener noreferrer" class="btn-github">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                                        <span>View GitHub Repo</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="project-viz-side">
+                                <div class="viz-header">
+                                    <h4>Transaction Risk & Fraud Breakdown</h4>
+                                </div>
+                                <div class="chart-container" id="fraud-chart-area">
+                                    <!-- Dynamic SVG injected by JS -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: E-commerce Return Sustainability -->
+                    <div class="project-content-pane" id="ecommerce-project">
+                        <div class="project-grid">
+                            <div class="project-details-side">
+                                <div class="project-badge bg-emerald-text">Power BI, Power Query & MySQL</div>
+                                <h3 class="project-name">E-commerce Return Sustainability Analysis</h3>
+                                <p class="project-description">
+                                    Analyzed over 5,000+ order records to evaluate return trends, net revenue losses, customer return rationales, and environmental sustainability metrics.
+                                </p>
+                                <ul class="project-bullets">
+                                    <li>Performed advanced data cleaning and transformations using Power Query and Excel.</li>
+                                    <li>Designed interactive dashboards showing regional return heatmaps and product return rates.</li>
+                                    <li>Extracted actionable recommendations to optimize logistics and minimize return-related carbon footprint.</li>
+                                </ul>
+                                <div class="tech-stack">
+                                    <span class="tech-tag">Power BI</span>
+                                    <span class="tech-tag">Power Query</span>
+                                    <span class="tech-tag">MySQL</span>
+                                    <span class="tech-tag">DAX</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/sharvari0519/E-commerce-Return-Sustainability-Analysis-Dashboard.git" target="_blank" rel="noopener noreferrer" class="btn-github">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                                        <span>View GitHub Repo</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="project-viz-side">
+                                <div class="viz-header">
+                                    <h4>Return Loss by Category</h4>
+                                </div>
+                                <div class="chart-container" id="ecommerce-chart-area">
+                                    <!-- Dynamic SVG injected by JS -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: Face Recognition Attendance System -->
+                    <div class="project-content-pane" id="facerec-project">
+                        <div class="project-grid">
+                            <div class="project-details-side">
+                                <div class="project-badge bg-amber-text">Python, OpenCV & MySQL</div>
+                                <h3 class="project-name">Face Recognition Attendance System</h3>
+                                <p class="project-description">
+                                    Engineered an automated real-time attendance recording system using computer vision algorithms and machine learning face embedding classifiers.
+                                </p>
+                                <ul class="project-bullets">
+                                    <li>Implemented real-time facial feature extraction and verification using OpenCV and Python.</li>
+                                    <li>Integrated automated MySQL database sync to instantly log student / employee entry timestamps.</li>
+                                    <li>Built custom Pandas reporting scripts generating automated daily attendance summaries.</li>
+                                </ul>
+                                <div class="tech-stack">
+                                    <span class="tech-tag">Python</span>
+                                    <span class="tech-tag">OpenCV</span>
+                                    <span class="tech-tag">Pandas</span>
+                                    <span class="tech-tag">MySQL</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/sharvari0519/Face-recognition-attendance" target="_blank" rel="noopener noreferrer" class="btn-github">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                                        <span>View GitHub Repo</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="project-viz-side">
+                                <div class="viz-header">
+                                    <h4>Computer Vision Detection Pipeline</h4>
+                                </div>
+                                <div class="facerec-preview" id="facerec-preview-area">
+                                    <!-- Dynamic visual injected by JS -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4: Neural Trade AI -->
+                    <div class="project-content-pane" id="neuraltrade-project">
+                        <div class="project-grid">
+                            <div class="project-details-side">
+                                <div class="project-badge bg-cyan-text">JavaScript, TensorFlow.js & AI</div>
+                                <h3 class="project-name">Neural Trade AI - Stock Prediction Platform</h3>
+                                <p class="project-description">
+                                    Built an AI-driven stock forecast application monitoring 50+ NSE/BSE equities with real-time price tick processing and deep neural network signal predictions.
+                                </p>
+                                <ul class="project-bullets">
+                                    <li>Embedded TensorFlow.js neural network trained on historical price indicators to generate forecast confidence scores.</li>
+                                    <li>Designed BUY / SELL / HOLD signal indicators with live price updates.</li>
+                                    <li>Crafted responsive dark-themed dashboard UI for technical traders.</li>
+                                </ul>
+                                <div class="tech-stack">
+                                    <span class="tech-tag">JavaScript</span>
+                                    <span class="tech-tag">TensorFlow.js</span>
+                                    <span class="tech-tag">HTML5/CSS3</span>
+                                    <span class="tech-tag">Stock Forecast</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/sharvari0519/NeuralTrade-AI.git" target="_blank" rel="noopener noreferrer" class="btn-github">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                                        <span>View GitHub Repo</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="project-viz-side">
+                                <div class="viz-header">
+                                    <h4>Neural Forecast Tick Engine</h4>
+                                </div>
+                                <div class="chart-container" id="neural-chart-area">
+                                    <!-- Dynamic SVG injected by JS -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="education-section section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Education</h2>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="education-card">
+                    <div class="edu-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"></path></svg>
+                    </div>
+                    <div class="edu-content">
+                        <div class="edu-header">
+                            <div>
+                                <h3 class="degree-title">Bachelor of Business Administration (Computer Application) - BBA (CA)</h3>
+                                <p class="college-name">Sarhad College of Arts, Science and Commerce, Pune</p>
+                            </div>
+                            <div class="edu-meta">
+                                <span class="edu-date">Graduated: 2026</span>
+                                <span class="edu-gpa">CGPA: 9.11 / 10</span>
+                            </div>
+                        </div>
+                        <p class="edu-desc">
+                            Built strong foundations in data structures, relational database management systems (RDBMS), object-oriented programming, computer applications, and business statistics. Achieved an outstanding CGPA of 9.11/10.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certificates Section -->
+        <section id="certificates" class="certificates-section section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Certifications & Training</h2>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="cert-grid">
+                    <div class="cert-card">
+                        <div class="cert-badge">Microsoft</div>
+                        <h4 class="cert-title">Microsoft Generative AI</h4>
+                        <p class="cert-issuer">Microsoft</p>
+                    </div>
+                    <div class="cert-card">
+                        <div class="cert-badge">Tata</div>
+                        <h4 class="cert-title">Tata GenAI Virtual Experience</h4>
+                        <p class="cert-issuer">Forage / Tata</p>
+                    </div>
+                    <div class="cert-card">
+                        <div class="cert-badge">Python</div>
+                        <h4 class="cert-title">Python Programming</h4>
+                        <p class="cert-issuer">Saylor.org (2025)</p>
+                    </div>
+                    <div class="cert-card">
+                        <div class="cert-badge">Deloitte</div>
+                        <h4 class="cert-title">Deloitte Job Simulation</h4>
+                        <p class="cert-issuer">Deloitte</p>
+                    </div>
+                    <div class="cert-card">
+                        <div class="cert-badge">Data Analyst</div>
+                        <h4 class="cert-title">Data Analyst Certification</h4>
+                        <p class="cert-issuer">United Latino Students Association</p>
+                    </div>
+                    <div class="cert-card">
+                        <div class="cert-badge">NIIT</div>
+                        <h4 class="cert-title">NIIT Data Analytics</h4>
+                        <p class="cert-issuer">NIIT</p>
+                    </div>
+                    <div class="cert-card">
+                        <div class="cert-badge">SQL</div>
+                        <h4 class="cert-title">SQL Masterclass</h4>
+                        <p class="cert-issuer">Udemy</p>
+                    </div>
+                    <div class="cert-card">
+                        <div class="cert-badge">Web Dev</div>
+                        <h4 class="cert-title">Web Development</h4>
+                        <p class="cert-issuer">Great Learning</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Get In Touch</h2>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h3>Connect with Me</h3>
+                        <p>Feel free to reach out for job opportunities, data analytics projects, or collaborative AI research.</p>
+                        
+                        <div class="contact-cards">
+                            <a href="mailto:sharvarisonawane516@gmail.com" class="contact-detail-card">
+                                <div class="detail-icon bg-indigo">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                </div>
+                                <div class="detail-content">
+                                    <h4>Email</h4>
+                                    <span>sharvarisonawane516@gmail.com</span>
+                                </div>
+                            </a>
+
+                            <a href="tel:+919022369618" class="contact-detail-card">
+                                <div class="detail-icon bg-emerald">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                </div>
+                                <div class="detail-content">
+                                    <h4>Phone</h4>
+                                    <span>+91 9022369618</span>
+                                </div>
+                            </a>
+
+                            <a href="https://linkedin.com/in/sharvarisonawane-396593b" target="_blank" rel="noopener noreferrer" class="contact-detail-card">
+                                <div class="detail-icon bg-cyan">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                                </div>
+                                <div class="detail-content">
+                                    <h4>LinkedIn</h4>
+                                    <span>sharvarisonawane-396593b</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form-container">
+                        <form id="contact-form" class="contact-form">
+                            <div class="form-group">
+                                <label for="form-name">Name</label>
+                                <input type="text" id="form-name" required placeholder="Your Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="form-email">Email</label>
+                                <input type="email" id="form-email" required placeholder="your.email@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="form-subject">Subject</label>
+                                <input type="text" id="form-subject" required placeholder="Job Opportunity / Collaboration">
+                            </div>
+                            <div class="form-group">
+                                <label for="form-message">Message</label>
+                                <textarea id="form-message" rows="5" required placeholder="Hi Sharvari, I reviewed your portfolio and would like to discuss..."></textarea>
+                            </div>
+                            <button type="submit" id="form-submit-btn" class="btn btn-primary w-full">
+                                <span>Send Message</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                            </button>
+                            <div id="form-feedback" class="form-feedback-message"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Play Reel Video Modal -->
+    <div id="reel-modal" class="reel-modal-overlay">
+        <div class="reel-modal-container">
+            <button class="reel-close-btn" id="close-reel-btn" aria-label="Close Video Reel">&times;</button>
+            <div class="reel-video-wrapper">
+                <div class="reel-avatar-header" style="justify-content: space-between;">
+                    <div style="display: flex; align-items: center; gap: 16px;">
+                        <img src="assets/sharvari.png" alt="Sharvari Sonawane" class="reel-avatar-thumb">
+                        <div>
+                            <h3>Sharvari Sonawane</h3>
+                            <p>Data Analyst | AI & BI Enthusiast</p>
+                        </div>
+                    </div>
+                    <button id="voice-replay-btn" class="btn btn-secondary" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 8px;">
+                        🔊 Play AI Voice
+                    </button>
+                </div>
+                <div class="reel-video-box">
+                    <div class="video-ambient-glow"></div>
+                    <div class="talking-avatar-player">
+                        <img src="assets/sharvari.png" alt="Sharvari Talking Avatar" class="reel-avatar-hero-img">
+                        <div class="talking-waveform">
+                            <span></span><span></span><span></span><span></span><span></span>
+                        </div>
+                        <div class="talking-captions">
+                            <p>"Hi, I'm Sharvari. I'm a Data Analyst passionate about turning complex datasets into clear, actionable business insights. Welcome to my portfolio!"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <p class="copyright">&copy; 2026 Sharvari Sonawane. All Rights Reserved.</p>
+            <p class="credits">Designed & Custom Engineered with Passion</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript File -->
+    <script src="index.js"></script>
+</body>
+</html>
