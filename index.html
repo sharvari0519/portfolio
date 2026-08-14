@@ -47,17 +47,17 @@
   nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;}
   .logo{font-family:'Sora',sans-serif;font-weight:700;font-size:1.05rem;}
   .logo span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;}
-  .navlinks{display:flex;gap:34px;font-size:0.9rem;color:var(--text-mid);}
-  .navlinks a{position:relative;padding:4px 0;transition:color .25s;}
-  .navlinks a:hover{color:var(--text-hi);}
+  .navlinks{display:flex;gap:34px;font-size:0.9rem;color:var(--text-mid);align-items:center;}
+  .navlinks a{position:relative;padding:8px 6px;border-radius:8px;transition:color .2s, background .2s;}
+  .navlinks a:hover{color:var(--text-hi);background:rgba(255,255,255,0.02);}
   .navlinks a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--grad);transition:width .3s;}
   .navlinks a:hover::after{width:100%;}
-  .navtoggle{display:none;background:none;border:none;color:var(--text-hi);font-size:1.4rem;cursor:pointer;}
+  .navtoggle{display:none;background:none;border:none;color:var(--text-hi);font-size:1.4rem;cursor:pointer;padding:6px;border-radius:8px;}
   @media (max-width:760px){
-    .navlinks{position:fixed;top:68px;left:0;right:0;flex-direction:column;gap:0;background:var(--navy-800);border-bottom:1px solid var(--glass-border);max-height:0;overflow:hidden;transition:max-height .35s ease;}
-    .navlinks.open{max-height:400px;}
-    .navlinks a{padding:16px 28px;border-top:1px solid var(--glass-border);width:100%;}
-    .navtoggle{display:block;}
+    .navlinks{position:fixed;top:68px;left:0;right:0;flex-direction:column;gap:0;background:linear-gradient(180deg, rgba(12,18,36,0.98), rgba(7,11,22,0.98));border-bottom:1px solid var(--glass-border);max-height:0;overflow:hidden;transition:max-height .28s ease,padding .2s ease;z-index:220;padding:0 12px;}
+    .navlinks.open{max-height:420px;padding-bottom:18px;}
+    .navlinks a{padding:14px 18px;border-top:1px solid var(--glass-border);width:100%;display:block;}
+    .navtoggle{display:block;font-size:1.35rem;padding:8px 10px;border-radius:10px;background:transparent;border:1px solid transparent}
   }
 
   section{padding:120px 0 60px;}
@@ -521,11 +521,43 @@
 </footer>
 
 <script>
-  // mobile nav toggle
+  // mobile nav toggle + accessibility + outside-click close + active link highlighting
   const navtoggle = document.getElementById('navtoggle');
   const navlinks = document.getElementById('navlinks');
-  navtoggle.addEventListener('click', () => navlinks.classList.toggle('open'));
-  navlinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navlinks.classList.remove('open')));
+  if (navtoggle && navlinks) {
+    navtoggle.setAttribute('aria-expanded', 'false');
+    navtoggle.addEventListener('click', () => {
+      const isOpen = navlinks.classList.toggle('open');
+      navtoggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+    // close menu when a link is clicked (mobile)
+    navlinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navlinks.classList.remove('open')));
+    // remove open on larger resize
+    window.addEventListener('resize', () => { if(window.innerWidth > 760) navlinks.classList.remove('open'); });
+    // click outside to close the mobile menu
+    document.addEventListener('click', (ev) => {
+      if(!navlinks.classList.contains('open')) return;
+      const target = ev.target;
+      if(!navlinks.contains(target) && !navtoggle.contains(target)){
+        navlinks.classList.remove('open');
+        navtoggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+    // highlight active section link while scrolling
+    const sections = document.querySelectorAll('section[id]');
+    const linkMap = Array.from(navlinks.querySelectorAll('a')).reduce((m, a) => { const href = a.getAttribute('href'); if(href && href.startsWith('#')) m[href]=a; return m; }, {});
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        const id = '#' + e.target.id;
+        const link = linkMap[id];
+        if(link){
+          if(e.isIntersecting){ link.classList.add('active'); link.style.color = 'var(--teal)'; }
+          else { link.classList.remove('active'); link.style.color = ''; }
+        }
+      });
+    }, {threshold:0.45});
+    sections.forEach(s => sectionObserver.observe(s));
+  }
 
   // scroll reveal
   const revealEls = document.querySelectorAll('.reveal');
