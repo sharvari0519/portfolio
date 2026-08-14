@@ -284,8 +284,6 @@
       <div class="btnrow">
         <a class="btn btn-primary" href="#contact">Get in touch</a>
         <button class="btn btn-ghost" id="playReelBtn" type="button">Play Reel</button>
-        <button class="btn btn-ghost" id="speakBtn" type="button">Listen</button>
-        <button class="btn btn-ghost" id="playIntroBtn" type="button">Play Intro</button>
         <a class="btn btn-ghost" href="Portfolio Assets/Resume.pdf" target="_blank" rel="noopener">Download résumé ↓</a>
       </div>
       <div class="stat-row">
@@ -396,36 +394,32 @@
     <h2 class="sectitle reveal">Built to show the whole pipeline.</h2>
     <p class="secdesc reveal">Each one goes from raw/messy data to a decision-ready output — not just a notebook that ends at a chart.</p>
     <div class="proj-grid">
-      <a class="card proj-card proj-link reveal" href="Portfolio Assets/Project Screenshot 1.png" target="_blank" rel="noopener">
-        <span class="proj-tag">Web · AI</span>
-        <h3>NeuralTrade AI — Stock Prediction Platform</h3>
-        <p>AI-powered forecasting app covering 55+ NSE/BSE equities with a live tick engine, TensorFlow.js price predictions with BUY/SELL/HOLD signals, and a full technical suite: Bollinger Bands, EMA, VWAP, RSI, MACD, ATR.</p>
-        <div class="proj-stack"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>TensorFlow.js</span></div>
+      <a class="card proj-card proj-link reveal" href="https://github.com/sharvari0519/E-commerce-Return-Sustainability-Analysis-Dashboard" target="_blank" rel="noopener">
+        <span class="proj-tag">Power BI · Analytics</span>
+        <h3>E-commerce Return &amp; Sustainability Dashboard</h3>
+        <p>Interactive Power BI dashboard using MySQL, Excel and DAX to analyze 5,000+ orders for return trends, revenue loss, return reasons, and sustainability metrics.</p>
+        <div class="proj-stack"><span>Power BI</span><span>MySQL</span><span>Excel</span><span>DAX</span></div>
       </a>
-      <a class="card proj-card proj-link reveal" href="Portfolio Assets/Project Screenshot 2.png" target="_blank" rel="noopener">
+
+      <a class="card proj-card proj-link reveal" href="https://github.com/sharvari0519/Credit-Card-Fraud-DetectionDashboard" target="_blank" rel="noopener">
+        <span class="proj-tag">Power BI · Fraud Detection</span>
+        <h3>Credit Card Fraud Detection Dashboard</h3>
+        <p>Built an interactive dashboard analyzing 284,807 transactions with KPI cards, slicers, charts and SQL-based insights to surface fraud patterns.</p>
+        <div class="proj-stack"><span>Power BI</span><span>MySQL</span><span>Excel</span></div>
+      </a>
+
+      <a class="card proj-card proj-link reveal" href="https://github.com/sharvari0519/face-recognition-attendance" target="_blank" rel="noopener">
         <span class="proj-tag">Python · Computer Vision</span>
         <h3>Face Recognition Attendance System</h3>
-        <p>Automated attendance pipeline using OpenCV for real-time facial recognition, a MySQL backend for live logging, and Pandas-driven summary reports for absenteeism tracking.</p>
+        <p>End-to-end attendance system using OpenCV and Pandas with real-time MySQL synchronization to automate logging via facial recognition.</p>
         <div class="proj-stack"><span>Python</span><span>OpenCV</span><span>Pandas</span><span>MySQL</span></div>
       </a>
-      <a class="card proj-card proj-link reveal" href="Portfolio Assets/Project Screenshot 3.png" target="_blank" rel="noopener">
-        <span class="proj-tag">Python · EDA</span>
-        <h3>Netflix Content Analysis</h3>
-        <p>End-to-end analysis of Netflix's catalog — data cleaning, content dashboards, country-wise and trend breakdowns, wrapped up in a business insights report.</p>
-        <div class="proj-stack"><span>Python</span><span>Pandas</span><span>Matplotlib</span><span>Jupyter</span></div>
-      </a>
-      <a class="card proj-card proj-link reveal" href="Portfolio Assets/Project Screenshot 4.png" target="_blank" rel="noopener">
-        <span class="proj-tag">SQL · Analytics</span>
-        <h3>B2B Data Quality Audit Dashboard</h3>
-        <p>A dual-track project auditing contact/account data for accuracy and completeness — built to double as evidence for both Data Analyst and CDQA-style roles.</p>
-        <div class="proj-stack"><span>SQL</span><span>Power BI</span><span>Excel</span></div>
-      </a>
-      <!-- Credit Card Fraud Detection project removed per request -->
-      <a class="card proj-card proj-link reveal" href="Portfolio Assets/Project Screenshot 6.png" target="_blank" rel="noopener">
-        <span class="proj-tag">Python · Sustainability</span>
-        <h3>E-commerce Returns &amp; Sustainability</h3>
-        <p>Explored return patterns in e-commerce data to surface sustainability and cost implications, translating raw logs into a narrative business report.</p>
-        <div class="proj-stack"><span>Python</span><span>Pandas</span><span>Matplotlib</span></div>
+
+      <a class="card proj-card proj-link reveal" href="https://github.com/sharvari0519/NeuralTrade-AI" target="_blank" rel="noopener">
+        <span class="proj-tag">Web · AI</span>
+        <h3>NeuralTrade AI — Stock Prediction Platform</h3>
+        <p>AI-powered web app using TensorFlow.js for price forecasts on 55+ equities, with live tick engine and BUY/SELL/HOLD signals.</p>
+        <div class="proj-stack"><span>HTML</span><span>JavaScript</span><span>TensorFlow.js</span></div>
       </a>
     </div>
   </div>
@@ -619,94 +613,7 @@
     });
   }
 
-  // text-to-speech (voice) — Listen button
-  const speakBtn = document.getElementById('speakBtn');
-  if (speakBtn) {
-    const getText = () => {
-      const title = document.querySelector('.hero h1')?.innerText || '';
-      const lede = document.querySelector('.lede')?.innerText || '';
-      return `${title}. ${lede}`;
-    };
-    speakBtn.addEventListener('click', () => {
-      if (!('speechSynthesis' in window)) {
-        alert('Text-to-speech is not supported in this browser.');
-        return;
-      }
-      if (speechSynthesis.speaking) {
-        speechSynthesis.cancel();
-        speakBtn.textContent = 'Listen';
-        return;
-      }
-      const utt = new SpeechSynthesisUtterance(getText());
-      const voices = speechSynthesis.getVoices();
-      utt.voice = (voices && voices.find(v => v.lang && v.lang.startsWith('en'))) || voices[0];
-      utt.rate = 1;
-      utt.onend = () => { speakBtn.textContent = 'Listen'; };
-      speakBtn.textContent = 'Stop';
-      speechSynthesis.speak(utt);
-    });
-    if (typeof speechSynthesis !== 'undefined') speechSynthesis.onvoiceschanged = () => {};
-  }
-
-  // Play Intro: prefer intro.mp3 in Portfolio Assets, otherwise fallback to browser TTS
-  const playIntroBtn = document.getElementById('playIntroBtn');
-  const introAudio = document.createElement('audio');
-  introAudio.id = 'introAudio';
-  introAudio.src = 'Portfolio Assets/intro.mp3';
-  introAudio.preload = 'none';
-  document.body.appendChild(introAudio);
-
-  const getIntroText = () => {
-    const name = document.querySelector('.hero h1')?.innerText || 'Hello, I am Sharvari Sonawane.';
-    const lede = document.querySelector('.lede')?.innerText || '';
-    return `${name}. ${lede}`;
-  };
-
-  const speakText = (text) => {
-    if (!('speechSynthesis' in window)) {
-      alert('Text-to-speech is not supported in this browser.');
-      return;
-    }
-    if (speechSynthesis.speaking) speechSynthesis.cancel();
-    const utt = new SpeechSynthesisUtterance(text);
-    const voices = speechSynthesis.getVoices();
-    // prefer an English voice (IN/US/GB), try female-like names if available
-    utt.voice = voices.find(v => /en-(in|us|gb)/i.test(v.lang)) || voices.find(v => /samantha|zira|alloy|zira/i.test(v.name.toLowerCase())) || voices[0];
-    utt.rate = 1;
-    speechSynthesis.speak(utt);
-  };
-
-  if (playIntroBtn) {
-    playIntroBtn.addEventListener('click', async () => {
-      playIntroBtn.disabled = true;
-      // try fetching the intro audio file
-      try {
-        const resp = await fetch(introAudio.src, { method: 'HEAD' });
-        if (resp.ok) {
-          // file exists — play it
-          introAudio.play().catch(() => {
-            // fallback to full fetch and play
-            introAudio.load(); introAudio.play().catch(() => speakText(getIntroText()));
-          });
-          introAudio.onended = () => { playIntroBtn.disabled = false; };
-          return;
-        }
-      } catch (e) {
-        // HEAD may be blocked; attempt to load and play
-        try {
-          await introAudio.play();
-          introAudio.onended = () => { playIntroBtn.disabled = false; };
-          return;
-        } catch (err) {
-          // fall through to TTS
-        }
-      }
-      // fallback: browser TTS
-      speakText(getIntroText());
-      // re-enable after short delay
-      setTimeout(() => { playIntroBtn.disabled = false; }, 1200);
-    });
-  }
+  // Audio features removed per request
 </script>
 </body>
 </html>
