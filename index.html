@@ -287,9 +287,16 @@
         <span style="background:var(--navy-800);border:1px solid var(--glass-border);padding:8px 12px;border-radius:999px;color:var(--text-hi);">🐍 Python & SQL</span>
         <span style="background:var(--navy-800);border:1px solid var(--glass-border);padding:8px 12px;border-radius:999px;color:var(--text-low);">📈 Research Analyst</span>
       </div>
+      <div style="margin-top:14px;color:var(--text-mid);font-size:0.95rem;display:flex;gap:18px;align-items:center;flex-wrap:wrap">
+        <a href="mailto:sharvarisonwane519@gmail.com" style="color:var(--text-mid);text-decoration:none;">✉️ sharvarisonwane519@gmail.com</a>
+        <a href="tel:+919923369618" style="color:var(--text-mid);text-decoration:none;">📞 +91 99233 69618</a>
+        <span>📍 Pune, India</span>
+        <a href="https://linkedin.com/in/sharvarisonawane-190588s" target="_blank" rel="noopener" style="color:var(--text-mid);text-decoration:none;">LinkedIn ↗</a>
+      </div>
       <div class="btnrow">
         <a class="btn btn-primary" href="#contact">Get in touch</a>
         <a class="btn btn-ghost" href="Portfolio Assets/Resume.pdf" target="_blank" rel="noopener">Download résumé ↓</a>
+        <a class="btn btn-ghost" id="printResume" href="#" style="display:inline-flex;align-items:center;">Print Resume</a>
       </div>
       <div class="stat-row">
         <div><div class="num">1.5+</div><div class="lbl">Years Experience</div></div>
@@ -572,6 +579,15 @@
       const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
       window.location.href = `mailto:sharvarisonwane519@gmail.com?subject=${subject}&body=${body}`;
       formFeedback.textContent = 'Your message is ready to send via email client.';
+    });
+  }
+
+  // print resume action
+  const printBtn = document.getElementById('printResume');
+  if (printBtn) {
+    printBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.open('Portfolio Assets/Resume.pdf', '_blank');
     });
   }
 
