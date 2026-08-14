@@ -285,6 +285,7 @@
         <a class="btn btn-primary" href="#contact">Get in touch</a>
         <button class="btn btn-ghost" id="playReelBtn" type="button">Play Reel</button>
         <button class="btn btn-ghost" id="speakBtn" type="button">Listen</button>
+        <button class="btn btn-ghost" id="playIntroBtn" type="button">Play Intro</button>
         <a class="btn btn-ghost" href="Portfolio Assets/Resume.pdf" target="_blank" rel="noopener">Download résumé ↓</a>
       </div>
       <div class="stat-row">
@@ -296,8 +297,8 @@
     <div class="hero-photo-wrap">
       <span class="orbit-tag t1">SELECT * FROM insights;</span>
       <div class="hero-video-card reveal">
-        <img class="hero-image" src="Portfolio Assets/Hero Image.png" alt="Hero image of Sharvari Sonawane" loading="lazy">
-        <video class="hero-video" id="heroVideo" poster="Portfolio Assets/Hero Image.png" preload="metadata" muted playsinline>
+        <img class="hero-image" src="Portfolio Assets/sharvari.jpeg" alt="Hero image of Sharvari Sonawane" loading="lazy">
+        <video class="hero-video" id="heroVideo" poster="Portfolio Assets/sharvari.jpeg" preload="metadata" muted playsinline>
           <source src="Portfolio Assets/Hero Talking Video.mp4" type="video/mp4">
           Your browser does not support this video.
         </video>
@@ -310,7 +311,7 @@
 <div class="modal" id="videoModal" aria-hidden="true">
   <div class="modal-content">
     <button class="modal-close" id="modalClose" aria-label="Close video">×</button>
-    <video class="modal-video" id="modalVideo" controls preload="metadata" poster="Portfolio Assets/Hero Image.png">
+    <video class="modal-video" id="modalVideo" controls preload="metadata" poster="Portfolio Assets/sharvari.jpeg">
       <source src="Portfolio Assets/Hero Talking Video.mp4" type="video/mp4">
       Your browser does not support this video.
     </video>
@@ -650,6 +651,66 @@
       speechSynthesis.speak(utt);
     });
     if (typeof speechSynthesis !== 'undefined') speechSynthesis.onvoiceschanged = () => {};
+  }
+
+  // Play Intro: prefer intro.mp3 in Portfolio Assets, otherwise fallback to browser TTS
+  const playIntroBtn = document.getElementById('playIntroBtn');
+  const introAudio = document.createElement('audio');
+  introAudio.id = 'introAudio';
+  introAudio.src = 'Portfolio Assets/intro.mp3';
+  introAudio.preload = 'none';
+  document.body.appendChild(introAudio);
+
+  const getIntroText = () => {
+    const name = document.querySelector('.hero h1')?.innerText || 'Hello, I am Sharvari Sonawane.';
+    const lede = document.querySelector('.lede')?.innerText || '';
+    return `${name}. ${lede}`;
+  };
+
+  const speakText = (text) => {
+    if (!('speechSynthesis' in window)) {
+      alert('Text-to-speech is not supported in this browser.');
+      return;
+    }
+    if (speechSynthesis.speaking) speechSynthesis.cancel();
+    const utt = new SpeechSynthesisUtterance(text);
+    const voices = speechSynthesis.getVoices();
+    // prefer an English voice (IN/US/GB), try female-like names if available
+    utt.voice = voices.find(v => /en-(in|us|gb)/i.test(v.lang)) || voices.find(v => /samantha|zira|alloy|zira/i.test(v.name.toLowerCase())) || voices[0];
+    utt.rate = 1;
+    speechSynthesis.speak(utt);
+  };
+
+  if (playIntroBtn) {
+    playIntroBtn.addEventListener('click', async () => {
+      playIntroBtn.disabled = true;
+      // try fetching the intro audio file
+      try {
+        const resp = await fetch(introAudio.src, { method: 'HEAD' });
+        if (resp.ok) {
+          // file exists — play it
+          introAudio.play().catch(() => {
+            // fallback to full fetch and play
+            introAudio.load(); introAudio.play().catch(() => speakText(getIntroText()));
+          });
+          introAudio.onended = () => { playIntroBtn.disabled = false; };
+          return;
+        }
+      } catch (e) {
+        // HEAD may be blocked; attempt to load and play
+        try {
+          await introAudio.play();
+          introAudio.onended = () => { playIntroBtn.disabled = false; };
+          return;
+        } catch (err) {
+          // fall through to TTS
+        }
+      }
+      // fallback: browser TTS
+      speakText(getIntroText());
+      // re-enable after short delay
+      setTimeout(() => { playIntroBtn.disabled = false; }, 1200);
+    });
   }
 </script>
 </body>
